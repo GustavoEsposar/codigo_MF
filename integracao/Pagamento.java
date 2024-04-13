@@ -1,4 +1,6 @@
-package model.pagamento;
+package integracao;
+
+import modelo.MetodoPagamento;
 
 class Pagamento {
     private MetodoPagamento metodoPag;
