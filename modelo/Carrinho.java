@@ -11,15 +11,14 @@ public final class Carrinho {
 
     private Dictionary<String, ProdutoAplicado> produtos;
     private HashSet<Cupom> cupons;
-    private Double valorTotal;
+    private Double valorTotalCarrinho;
+    private Double valorProdutos;
     private Double valorCupons;
 
     public Carrinho(){
         produtos = new Hashtable<String, ProdutoAplicado>();
         cupons = new HashSet<Cupom>();
-        cupons.add(new Cupom("SPECTASTIC", 15.0));
-        cupons.add(new Cupom("ZOADO", 10.0));
-        valorTotal = 0.0;
+        valorTotalCarrinho = 0.0;
         valorCupons = 0.0;
     }
 
@@ -27,7 +26,7 @@ public final class Carrinho {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("\nCarrinho{\n");
-        sb.append("\tvalorTotal=").append(valorTotal);
+        sb.append("\tvalorTotal=").append(valorTotalCarrinho);
         sb.append(",\n\tprodutos=").append(produtos);
         sb.append(",\n\tcuponsDisponiveis=").append(cupons);
         sb.append(",\n\tdescontoCuponsAplicados=").append(valorCupons);
@@ -44,33 +43,40 @@ public final class Carrinho {
             produtos.put(produto.id(), new ProdutoAplicado(produto, ++produtoAplicado.quantidade));
         }
 
-        calcularValorTotal();
+        calcularValoresCarrinho();
     }
 
     public void removerProduto(String idProduto){
         produtos.remove(idProduto);
-        calcularValorTotal();
+        calcularValoresCarrinho();
+    }
+
+    public boolean adicionarCupom(Cupom cupom){
+        return adicionarCupons(ListUtils.dentroDeLista(cupom));
     }
 
     public boolean adicionarCupons(List<Cupom> cupons){
         var descontoCupons = somarValoresCupons(cupons);
-        var valorARetirar = (valorTotal * descontoCupons);
+        var valorARetirar = (valorProdutos * descontoCupons);
         
-        if(valorARetirar <= valorTotal){
+        if(valorARetirar <= valorTotalCarrinho){
             for (Cupom cupom : cupons) {
-                cupons.add(cupom);
+                this.cupons.add(cupom);
             }
-            valorTotal -= valorARetirar;
+            valorTotalCarrinho -= valorARetirar;
+            valorCupons = somarValoresCupons(this.cupons.stream().toList());
             return true;
         }
 
         return false;
     }
 
-    private void calcularValorTotal(){
-        var precoCarrinho = calcularPrecoCarrinho(this.produtos);
+    private void calcularValoresCarrinho(){
+        var precoCarrinho = somarValorProdutos(this.produtos);
         var descontoCupons = somarValoresCupons(this.cupons.stream().toList());
-        valorTotal = precoCarrinho - (precoCarrinho * descontoCupons);
+        valorProdutos = precoCarrinho;
+        valorTotalCarrinho = precoCarrinho - (precoCarrinho * descontoCupons);
+        valorCupons = descontoCupons;
     }
 
     private Double somarValoresCupons(List<Cupom> cupons){
@@ -82,13 +88,11 @@ public final class Carrinho {
             return cupons.get(0).getPorcentagemDesconto();
         }
 
-        valorCupons = somarValoresCupons(cupons.subList(0, 1)) +
+        return somarValoresCupons(cupons.subList(0, 1)) +
         somarValoresCupons(cupons.subList(1, cupons.size()));
-        
-        return valorCupons;
     }
 
-    private Double calcularPrecoCarrinho(Dictionary<String, ProdutoAplicado> produtos){
+    private Double somarValorProdutos(Dictionary<String, ProdutoAplicado> produtos){
         var valorTotal = 0.0;
         var produtosAplicados = ListUtils.paraLista(produtos.elements());
 
@@ -99,8 +103,8 @@ public final class Carrinho {
        return valorTotal;
     }
 
-    public Double getValorTotal(){
-        return valorTotal;
+    public Double getValorTotalCarrinho(){
+        return valorTotalCarrinho;
     }
 }
 

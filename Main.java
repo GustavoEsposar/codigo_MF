@@ -11,6 +11,7 @@ public class Main {
         System.out.println();
         Comprador comprador = new Comprador("Zoador Jardins Silveira", "zoador@gmail.com", "(11)99999-9999", true, "100.211.070-09");
         escolheProdutos(comprador, vendedor);
+        adicionarCupons(comprador);
         System.out.println(comprador);
 
     }
@@ -57,5 +58,10 @@ public class Main {
     static void escolheProdutos(Comprador comprador, Vendedor vendedor) {
         comprador.adicionarAoCarrinho(vendedor.getProdutoDoCatalogo("P001"));
         comprador.adicionarAoCarrinho(vendedor.getProdutoDoCatalogo("P003"));
+    }
+
+    static void adicionarCupons(Comprador comprador){
+        comprador.adicionarCupomAoCarrinho(new Cupom("SPECTASTIC", 15.0));
+        comprador.adicionarCupomAoCarrinho(new Cupom("ZOADO", 10.0));
     }
 }

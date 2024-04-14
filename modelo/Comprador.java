@@ -29,4 +29,8 @@ public final class Comprador extends Cadastro {
     public void adicionarAoCarrinho(Produto produto) {
         carrinho.adicionarProduto(produto);
     }
+
+    public void adicionarCupomAoCarrinho(Cupom cupom){
+        carrinho.adicionarCupom(cupom);
+    }
 }
