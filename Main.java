@@ -14,6 +14,11 @@ public class Main {
         adicionarCupons(comprador);
         System.out.println(comprador);
 
+        removerProduto(comprador, "P001");
+        System.out.println(comprador);
+
+        removerProduto(comprador, "P003");
+        System.out.println(comprador);
     }
 
     static void preencherCatalogo(Vendedor vendedor) {
@@ -63,5 +68,9 @@ public class Main {
     static void adicionarCupons(Comprador comprador){
         comprador.adicionarCupomAoCarrinho(new Cupom("SPECTASTIC", 15.0));
         comprador.adicionarCupomAoCarrinho(new Cupom("ZOADO", 10.0));
+    }
+
+    static void removerProduto(Comprador comprador, String idProduto){
+        comprador.removerProdutoDoCorrinho(idProduto);
     }
 }
