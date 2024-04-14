@@ -18,6 +18,7 @@ public final class Carrinho {
         produtos = new Hashtable<String, ProdutoAplicado>();
         cupons = new HashSet<Cupom>();
         cupons.add(new Cupom("SPECTASTIC", 15.0));
+        cupons.add(new Cupom("ZOADO", 10.0));
         valorTotal = 0.0;
         valorCupons = 0.0;
     }
@@ -82,7 +83,7 @@ public final class Carrinho {
         }
 
         valorCupons = somarValoresCupons(cupons.subList(0, 1)) +
-        somarValoresCupons(cupons.subList(1, cupons.size()+1));
+        somarValoresCupons(cupons.subList(1, cupons.size()));
         
         return valorCupons;
     }

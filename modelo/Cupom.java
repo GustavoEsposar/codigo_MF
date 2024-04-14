@@ -9,6 +9,11 @@ public class Cupom{
         setPorcentagemDesconto(porcentagemDesconto);
     }
 
+    @Override
+    public String toString() {
+        return "\n\tcupom=" + identificador + "\n\tporcentagem=" + porcentagemDesconto;
+    }
+
     public void setPorcentagemDesconto(double porcentagem){
         porcentagemDesconto = porcentagem / 100;
     }
