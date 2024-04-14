@@ -40,7 +40,4 @@ public final class Vendedor extends Cadastro {
     public void adicionarProdutoNoCatalogo(Produto produto) {
         this.catalogo.add(produto);
     }
-
-    void atualizarEstoqueDeProduto(Integer index, Integer qtde) {
-    }
 }

@@ -14,12 +14,16 @@ public final class Carrinho {
     private Double valorTotalCarrinho;
     private Double valorProdutos;
     private Double valorCupons;
+    private MetodoPagamento metodoPagamento;
+    private Double frete;
 
     public Carrinho(){
+        metodoPagamento = MetodoPagamento.CREDITO;
+        valorCupons = 0.0;
+        valorTotalCarrinho = 0.0;
+        frete = 0.0;
         produtos = new Hashtable<String, ProdutoAplicado>();
         cupons = new HashSet<Cupom>();
-        valorTotalCarrinho = 0.0;
-        valorCupons = 0.0;
     }
 
     @Override
@@ -111,15 +115,15 @@ public final class Carrinho {
 }
 
 class ProdutoAplicado {
-    public int quantidade;
-    public Produto produto;
+    protected int quantidade;
+    protected Produto produto;
 
     ProdutoAplicado(Produto produto, int quantidade){
         this.produto = produto;
         this.quantidade = quantidade;
     }
 
-    public Double getValorProduto() {
+    protected Double getValorProduto() {
         return quantidade * produto.preço();
     }
 }

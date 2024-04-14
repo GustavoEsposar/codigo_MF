@@ -6,10 +6,10 @@ public record Produto(
     String categoria,
     Double preço,
     String descricao,
-    float volume,
-    float comprimento,
-    float largura,
-    float espessura,
+    Float volume,
+    Float comprimento,
+    Float largura,
+    Float espessura,
     Integer qtdeEstoque
 ) {
     @Override
