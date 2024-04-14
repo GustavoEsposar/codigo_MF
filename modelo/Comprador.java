@@ -33,4 +33,8 @@ public final class Comprador extends Cadastro {
     public void adicionarCupomAoCarrinho(Cupom cupom){
         carrinho.adicionarCupom(cupom);
     }
+
+    public void removerProdutoDoCorrinho(String idProduto){
+        carrinho.removerProduto(idProduto);
+    }
 }

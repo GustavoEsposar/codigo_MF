@@ -47,8 +47,10 @@ public final class Carrinho {
     }
 
     public void removerProduto(String idProduto){
-        produtos.remove(idProduto);
-        calcularValoresCarrinho();
+        var removido = produtos.remove(idProduto);
+        if(removido != null){
+            calcularValoresCarrinho();
+        }
     }
 
     public boolean adicionarCupom(Cupom cupom){
