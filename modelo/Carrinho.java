@@ -39,11 +39,10 @@ public final class Carrinho {
 
         if(produtoAplicado == null){
             produtos.put(produto.id(), new ProdutoAplicado(produto, 1));
-            return;
+        }else{
+            produtos.put(produto.id(), new ProdutoAplicado(produto, ++produtoAplicado.quantidade));
         }
 
-        produtos.put(produto.id(), new ProdutoAplicado(produto, ++produtoAplicado.quantidade));
-        calcularValorTotal();
         calcularValorTotal();
     }
 
@@ -79,7 +78,7 @@ public final class Carrinho {
         }
 
         if(cupons.size() == 1){
-            return cupons.get(0).porcentagemDesconto();
+            return cupons.get(0).getPorcentagemDesconto();
         }
 
         valorCupons = somarValoresCupons(cupons.subList(0, 1)) +
