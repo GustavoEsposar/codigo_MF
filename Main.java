@@ -3,12 +3,16 @@ import modelo.*;
 
 public class Main {
     public static void main(String... args) {
+        System.out.println();
         Vendedor vendedor = new Vendedor("Ocara Embalagens Ltda.", "contato@ocaraembalagens.com", "(11)9999-9999", "68.650.621/0001-54");
         preencherCatalogo(vendedor);
+        System.out.println(vendedor);
+
+        System.out.println();
         Comprador comprador = new Comprador("Zoador Jardins Silveira", "zoador@gmail.com", "(11)99999-9999", true, "100.211.070-09");
         escolheProdutos(comprador, vendedor);
-        comprador.toString();
-        compradorFinalizaCompra();
+        System.out.println(comprador);
+
     }
 
     static void preencherCatalogo(Vendedor vendedor) {
@@ -53,9 +57,5 @@ public class Main {
     static void escolheProdutos(Comprador comprador, Vendedor vendedor) {
         comprador.adicionarAoCarrinho(vendedor.getProdutoDoCatalogo("P001"));
         comprador.adicionarAoCarrinho(vendedor.getProdutoDoCatalogo("P003"));
-    }
-
-    static void compradorFinalizaCompra() {
-
     }
 }

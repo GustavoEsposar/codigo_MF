@@ -11,6 +11,17 @@ public final class Comprador extends Cadastro {
         this.carrinho = new Carrinho();
     }
 
+    @Override
+    public String toString() {
+        return "Comprador{" +
+                "nome='" + nome + '\'' +
+                ", contato=" + contato +
+                ", senha='" + senha + '\'' +
+                ", documento='" + documento + '\'' +
+                ", carrinho=" + carrinho +
+                '}';
+    }
+
     public Carrinho getCarrinho() {
         return carrinho;
     }

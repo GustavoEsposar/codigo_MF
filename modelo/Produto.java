@@ -11,5 +11,21 @@ public record Produto(
     float largura,
     float espessura,
     Integer qtdeEstoque
-) {}
+) {
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "\n    id='" + id + '\'' +
+                ",\n    nome='" + nome + '\'' +
+                ",\n    categoria='" + categoria + '\'' +
+                ",\n    preço=" + preço +
+                ",\n    descricao='" + descricao + '\'' +
+                ",\n    volume=" + volume +
+                ",\n    comprimento=" + comprimento +
+                ",\n    largura=" + largura +
+                ",\n    espessura=" + espessura +
+                ",\n    qtdeEstoque=" + qtdeEstoque +
+                "\n}";
+    }
+}
 

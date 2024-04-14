@@ -17,17 +17,20 @@ public final class Carrinho {
     public Carrinho(){
         produtos = new Hashtable<String, ProdutoAplicado>();
         cupons = new HashSet<Cupom>();
+        cupons.add(new Cupom("SPECTASTIC", 15.0));
+        valorTotal = 0.0;
+        valorCupons = 0.0;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Carrinho{");
-        sb.append("valorTotal=").append(valorTotal);
-        sb.append(", produtos=").append(produtos);
-        sb.append(", cupons=").append(cupons);
-        sb.append(", valorCupons=").append(valorCupons);
-        sb.append('}');
+        sb.append("\nCarrinho{\n");
+        sb.append("\tvalorTotal=").append(valorTotal);
+        sb.append(",\n\tprodutos=").append(produtos);
+        sb.append(",\n\tcuponsDisponiveis=").append(cupons);
+        sb.append(",\n\tdescontoCuponsAplicados=").append(valorCupons);
+        sb.append("\n}");
         return sb.toString();
     }
 
@@ -40,6 +43,7 @@ public final class Carrinho {
         }
 
         produtos.put(produto.id(), new ProdutoAplicado(produto, ++produtoAplicado.quantidade));
+        calcularValorTotal();
         calcularValorTotal();
     }
 
