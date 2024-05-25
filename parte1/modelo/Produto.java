@@ -1,4 +1,4 @@
-package modelo;
+package parte1.modelo;
 
 public record Produto(
     String id,

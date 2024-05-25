@@ -1,4 +1,4 @@
-package modelo;
+package parte1.modelo;
 
 public final class Comprador extends Cadastro {
     private Carrinho carrinho;

@@ -1,4 +1,4 @@
-package modelo;
+package parte1.modelo;
 
 public abstract class Cadastro {
     protected String nome;

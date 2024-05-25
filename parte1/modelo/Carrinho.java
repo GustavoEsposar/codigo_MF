@@ -1,11 +1,11 @@
-package modelo;
+package parte1.modelo;
 
 import java.util.Dictionary;
 import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.List;
 
-import utils.ListUtils;
+import parte1.utils.ListUtils;
 
 public final class Carrinho {
 
@@ -17,7 +17,7 @@ public final class Carrinho {
     private MetodoPagamento metodoPagamento;
     private Double frete;
 
-    public Carrinho(){
+    Carrinho(){
         metodoPagamento = MetodoPagamento.CREDITO;
         valorCupons = 0.0;
         valorTotalCarrinho = 0.0;
