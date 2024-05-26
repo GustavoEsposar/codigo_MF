@@ -8,6 +8,6 @@ public class Main {
         LoginController login = new LoginController();
 
         var um = login.cadastrar("spec@email.com", "Spec123sdfasd4@");
-
+        System.out.println(um);;
     }
 }
