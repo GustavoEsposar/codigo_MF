@@ -43,4 +43,24 @@ public class LoginController {
 
         return false;
     }
+
+    public String getCookie() {
+        return cookie;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getRoleUsuario() {
+        return roleUsuario;
+    }
+
+    public int getTempoExpiracaoCookie() {
+        return tempoExpiracaoCookie;
+    }
 }
