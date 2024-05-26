@@ -1,7 +1,9 @@
-package parte2.model;
+package parte2.database;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import parte2.model.Usuario;
 
 public class UsuariosCadastrados {
     private static Map<String, Usuario> usuarios = new HashMap<>();
@@ -15,4 +17,6 @@ public class UsuariosCadastrados {
     public static Usuario buscarUsuario(String email) {
         return usuarios.get(email);
     }
+
+    
 }
