@@ -1,9 +1,9 @@
 package parte2.controller;
 
-import parte2.Utils.AutenticacaoEmail;
-import parte2.Utils.AutenticacaoSenha;
 import parte2.database.UsuariosCadastrados;
 import parte2.model.Usuario;
+import parte2.services.AutenticacaoEmail;
+import parte2.services.AutenticacaoSenha;
 
 public class LoginController {
     private String cookie;

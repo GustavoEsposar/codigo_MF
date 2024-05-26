@@ -1,4 +1,4 @@
-package parte2.Utils;
+package parte2.services;
 
 public class AutenticacaoSenha {
     private static final char[] CARACTERES_ESPECIAIS = { '!', '@', '#', '$', '%', '^', '&', '*' };
