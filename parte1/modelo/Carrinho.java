@@ -14,7 +14,9 @@ public final class Carrinho {
     private Double valorTotalCarrinho;
     private Double valorProdutos;
     private Double valorCupons;
+    @SuppressWarnings("unused")
     private MetodoPagamento metodoPagamento;
+    @SuppressWarnings("unused")
     private Double frete;
 
     Carrinho(){
