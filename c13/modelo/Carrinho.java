@@ -1,11 +1,11 @@
-package parte1.modelo;
+package c13.modelo;
 
 import java.util.Dictionary;
 import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.List;
 
-import parte1.utils.ListUtils;
+import c13.utils.ListUtils;
 
 public final class Carrinho {
 

@@ -1,6 +1,6 @@
-package parte2;
+package c23;
 
-import parte2.controller.LoginController;
+import c23.controller.LoginController;
 
 
 public class Main {

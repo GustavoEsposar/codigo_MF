@@ -1,4 +1,4 @@
-package parte2.model;
+package c23.model;
 
 public class Usuario {
     private String email;

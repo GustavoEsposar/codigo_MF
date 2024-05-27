@@ -1,9 +1,9 @@
-package parte2.controller;
+package c23.controller;
 
-import parte2.database.UsuariosCadastrados;
-import parte2.model.Usuario;
-import parte2.services.AutenticacaoEmail;
-import parte2.services.AutenticacaoSenha;
+import c23.database.UsuariosCadastrados;
+import c23.model.Usuario;
+import c23.services.AutenticacaoEmail;
+import c23.services.AutenticacaoSenha;
 
 public class LoginController {
     private String cookie;
@@ -32,7 +32,7 @@ public class LoginController {
     public boolean login(String email, String senha) {
         Usuario usuario = UsuariosCadastrados.buscarUsuario(email);
 
-        if (usuario != null && usuario.getSenha().equals(senha)) {
+        if (UsuariosCadastrados.usuarioCadastrado(email) && UsuariosCadastrados.buscarUsuario(email).getSenha().equals(senha)) {
             email = usuario.getEmail();
             senha = usuario.getSenha();
             cookie = "123";

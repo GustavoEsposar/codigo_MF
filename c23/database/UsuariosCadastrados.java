@@ -1,9 +1,9 @@
-package parte2.database;
+package c23.database;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import parte2.model.Usuario;
+import c23.model.Usuario;
 
 public class UsuariosCadastrados {
     private static Map<String, Usuario> usuarios = new HashMap<>();

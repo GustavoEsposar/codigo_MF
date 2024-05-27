@@ -1,5 +1,5 @@
-package parte1;
-import parte1.modelo.*;
+package c13;
+import c13.modelo.*;
 
 
 public class Main {

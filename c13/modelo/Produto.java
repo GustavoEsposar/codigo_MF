@@ -1,4 +1,4 @@
-package parte1.modelo;
+package c13.modelo;
 
 public record Produto(
     String id,
