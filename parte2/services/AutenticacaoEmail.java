@@ -2,8 +2,8 @@ package parte2.services;
 
 public class AutenticacaoEmail {
     
-    public boolean verificarEmailCorreto(String email){
-        return contemArroba(email) && temDoisGruposComDominio(email);
+    public boolean ehUmEmailCorreto(String email){
+        return contemArroba(email) && temLocalEDominioNoEmail(email);
     }
 
     private boolean contemArroba(String email) {
@@ -16,7 +16,7 @@ public class AutenticacaoEmail {
         return false;
     }
 
-    private boolean temDoisGruposComDominio(String email) {
+    private boolean temLocalEDominioNoEmail(String email) {
         String[] partes = dividir(email, "@");
         return partes.length == 2 &&
                partes[0].length() >= 1 &&

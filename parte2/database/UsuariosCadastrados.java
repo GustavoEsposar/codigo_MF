@@ -17,5 +17,12 @@ public class UsuariosCadastrados {
     public static Usuario buscarUsuario(String email) {
         return usuarios.get(email);
     }
+
+    public static boolean usuarioCadastrado(String email) {
+        if (usuarios.get(email) == null) {
+            return false;
+        }
+        return true;
+    }
     
 }

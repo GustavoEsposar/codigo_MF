@@ -12,7 +12,7 @@ public class AutenticacaoSenha {
             'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
     };
 
-    public  boolean verificarSenhaSegura(String s) {
+    public  boolean ehUmaSenhaSegura(String s) {
         return contemCaracterEspecial(s) &&
                contemNumero(s) &&
                contemLetraMaiuscula(s) &&

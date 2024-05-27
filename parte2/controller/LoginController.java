@@ -22,11 +22,11 @@ public class LoginController {
 
     public boolean cadastrar(String email, String senha) {
         return
-        (UsuariosCadastrados.buscarUsuario(email) == null)
+        !UsuariosCadastrados.usuarioCadastrado(email)
             &&
-        new AutenticacaoSenha().verificarSenhaSegura(senha)
+        new AutenticacaoSenha().ehUmaSenhaSegura(senha)
             &&
-        new AutenticacaoEmail().verificarEmailCorreto(email);
+        new AutenticacaoEmail().ehUmEmailCorreto(email);
     }
 
     public boolean login(String email, String senha) {
