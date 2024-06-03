@@ -32,7 +32,8 @@ public class LoginController {
     public boolean login(String email, String senha) {
         Usuario usuario = UsuariosCadastrados.buscarUsuario(email);
 
-        if (UsuariosCadastrados.usuarioCadastrado(email) && UsuariosCadastrados.buscarUsuario(email).getSenha().equals(senha)) {
+        if (UsuariosCadastrados.usuarioCadastrado(email) &&
+         UsuariosCadastrados.buscarUsuario(email).getSenha().equals(senha)) {
             email = usuario.getEmail();
             senha = usuario.getSenha();
             cookie = "123";
